@@ -1,3 +1,8 @@
-/**
- * Created by ramonantunez on 15/10/14.
- */
+var calc = {
+    add: function (text) {
+        var res = text ? text : 0
+        return parseInt(res)
+    }
+}
+
+module.exports = calc

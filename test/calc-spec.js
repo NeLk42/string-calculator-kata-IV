@@ -1,3 +1,17 @@
+var calc = require('../src/calc.js')
+
+describe('String calculator add() method', function () {
+    it('Should return zero if string is 0', function () {
+        expect(calc.add()).toBe(0)
+    })
+
+    it('Should return 1 if string is 1', function () {
+        expect(calc.add('1')).toBe(1)
+    })
+
+
+})
+
 /*
 
  1. Create a String calculator with a method int Add(string numbers)
