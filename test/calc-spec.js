@@ -1,7 +1,7 @@
 var calc = require('../src/calc.js')
 
 describe('String calculator add() method', function () {
-    it('Should return zero if string is 0', function () {
+    it('Should return zero if string is empty', function () {
         expect(calc.add()).toBe(0)
     })
 
@@ -9,7 +9,9 @@ describe('String calculator add() method', function () {
         expect(calc.add('1')).toBe(1)
     })
 
-
+    it('Should return 3 if string is 1,2', function () {
+        expect(calc.add('1,2')).toBe(3)
+    })
 })
 
 /*
