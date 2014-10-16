@@ -40,6 +40,10 @@ describe('String calculator add() method', function () {
     it('Should return 2 if string is 1001,2', function () {
         expect(calc.add('1001,2')).toBe(2)
     })
+
+    it('Should return 21 if string is //;;\n1;;2;;3;;4;;5;;6', function () {
+        expect(calc.add('//;;\n1;;2;;3;;4;;5;;6')).toBe(21)
+    })
 })
 
 /*
