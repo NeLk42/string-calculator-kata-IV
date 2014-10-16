@@ -12,10 +12,18 @@ var calc = {
     add: function (text) {
         var res = text ? text : 0
         if (res != 0) {
-            var array = this.getNumArray(res);
+            var array = this.getNumArray(res),
+                err = 'Negatives not allowed:'
             res = 0
             for (var i = 0; i < array.length; i++) {
-                res += parseInt(array[i])
+                if (array[i] < 0) {
+                    err += ' ' + array[i]
+                } else if (array[i] <= 1000) {
+                    res += parseInt(array[i])
+                }
+            }
+            if (err.indexOf(': -') > 0) {
+                throw new Error(err)
             }
         }
         return res
