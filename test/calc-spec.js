@@ -44,20 +44,20 @@ describe('String calculator add() method', function () {
     it('Should return 21 if string is //;;\n1;;2;;3;;4;;5;;6', function () {
         expect(calc.add('//;;\n1;;2;;3;;4;;5;;6')).toBe(21)
     })
+
+    it('Should return 15 if string is //[;][+]\n1;2;3+4+5', function () {
+        expect(calc.add('//[;][+]\n1;2;3+4+5')).toBe(15)
+    })
+
+    it('Should return 10 if string is //[;;;][++]\n1;;;2;;;3++4', function () {
+        expect(calc.add('//[;;;][++]\n1;;;2;;;3++4')).toBe(10)
+    })
 })
 
 /*
 
 
- 5. Calling Add with a negative number will throw an exception “Negatives not allowed: “ listing all
- negative numbers that were in the list of numbers.
- a. Example “-1,2” throws “Negatives not allowed: -1”
- b. Example “2,-4,3,-5” throws “Negatives not allowed: -4,-5”
- 6. Numbers bigger than 1000 should be ignored.
- a. Example: “1001,2” returns 2
- 7. Delimiters can be of any length, using this syntax: “//[***]\n1***2***3” returns 6.
- 8. Allow multiple delimiters, using this syntax: “//[*][%]\n1*2%3” returns 6.
- 9. Handle multiple delimiters of any length.
+
 
 
  //DONE
@@ -79,4 +79,13 @@ describe('String calculator add() method', function () {
  this: “//[delimiter]\n[numbers]”
  b. Example: “//;\n1;2” should return 3 (the delimiter is ;)
  c. This first line is optional; all existing scenarios (using , or \n) should work as before.
+ 5. Calling Add with a negative number will throw an exception “Negatives not allowed: “ listing all
+ negative numbers that were in the list of numbers.
+ a. Example “-1,2” throws “Negatives not allowed: -1”
+ b. Example “2,-4,3,-5” throws “Negatives not allowed: -4,-5”
+ 6. Numbers bigger than 1000 should be ignored.
+ a. Example: “1001,2” returns 2
+ 7. Delimiters can be of any length, using this syntax: “//[***]\n1***2***3” returns 6.
+ 8. Allow multiple delimiters, using this syntax: “//[*][%]\n1*2%3” returns 6.
+ 9. Handle multiple delimiters of any length.
  */
